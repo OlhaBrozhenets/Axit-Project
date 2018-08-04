@@ -1,0 +1,100 @@
+html, body
+	font-family: "OpenSans"
+	font-size: 16px
+	color: $text 
+
+main 
+	overflow: hidden
+	> * 
+		padding-top: 95px
+		padding-bottom: 95px
+
+.gray-block
+	background-color: $silver 
+
+h1, h2 
+	font-family: "Raleway" 
+	font-weight: normal
+
+%for
+	&-row
+		@include flex($w: wrap)
+		margin: -15px
+	&-col
+		padding: 15px
+
+.container
+	width: 100% 
+	max-width: nth($mediaBp, 1)
+	padding-left: 10px
+	padding-right: 10px
+	margin-left: auto
+	margin-right: auto 
+	
+.logo
+	font-weight: lighter
+	font-size: 40px
+	color: $orange
+	b
+		color: #FFF 
+	&_big
+		font-size: 80px
+		
+.button
+	@include flex($jc: center, $ai: center)
+	width: 135px
+	height: 45px
+	border: 2px solid #fff
+	background-color: transparent 
+	color: #FFF
+	font-weight: 600 
+	font-size: 15px
+	transition: .2s
+	&:hover
+		color: $text
+		background-color: #FFF  
+	&_orange
+		border: none
+		border-radius: 4px
+		background-color: $orange
+		box-shadow: 0 2px 1px 0 rgba(#000, .2)
+		&:hover
+			background-color: $orange
+			color: #FFF
+			transform: translateY(-5px)
+			box-shadow: 0 7px 10px 0 rgba(#000, .2)
+
+.input
+	display: block
+	width: 100% 
+	height: 40px
+	border: none
+	border-bottom: 1px solid #D6D6D6 
+	font-size: 14px
+	padding: 0 15px
+	transition: .2s
+	&:hover
+		border-bottom-color: $orange * 1.2 
+	&:focus
+		border-bottom-color: $orange
+		font-size: 16px
+
+.title
+	font-size: 36px
+	color: $text
+	text-transform: uppercase
+	text-align: center
+	padding-bottom: 25px
+	margin-bottom: 25px
+	position: relative
+	&:after
+		content: ""
+		position: absolute
+		width: 65px
+		border-bottom: 2px solid $orange
+		bottom: 0
+		left: calc(50% - calc(65px / 2))
+	&-sub
+		text-align: center
+		font-size: 14px
+		opacity: 0.6

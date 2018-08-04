@@ -1,0 +1,482 @@
+@import "_options"
+@import "_common"
+// ====================
+// STYLES
+// ====================
+
+
+// ====================
+// Header styles
+// ====================
+.header
+	background: #000
+	&__grid
+		@include flex($jc: space-between, $ai: center)
+		padding-top: 20px
+		padding-bottom: 20px
+		
+.nav
+	&__list
+		@include flex
+	li + li
+		margin-left: 40px
+	a
+		font-size: 14px
+		font-weight: 600
+		color: #FFF 
+		&:hover
+			text-decoration: underline
+			
+// ====================
+// Preview-Block styles
+// ====================
+
+.preview
+	&-block
+		padding: 105px 0 135px
+		background: url(img/preview-bg.jpg) no-repeat center /cover
+		color: #FFF
+	&__title
+		padding-bottom: 35px
+		margin-top: 10px
+		margin-bottom: 35px
+		position: relative
+		font-size: 36px
+		text-transform: uppercase
+		&:after
+			content: "" 
+			width: 65px
+			border-bottom: 2px solid
+			position: absolute
+			left: 0
+			bottom: 0
+	&__text
+		max-width: 465px
+		margin-bottom: 40px
+		opacity: 0.8
+	&__row
+		@extend %for-row
+		justify-content: space-between
+		align-items: flex-end
+	&__col
+		@extend %for-col
+
+.custom-form
+	width: 360px
+	overflow: hidden
+	border-radius: 4px 
+	background-color: #FFF
+	&__title
+		padding: 15px 10px 10px
+		background-color: $silver
+		font-size: 20px
+		text-align: center
+		color: $dark 
+		span
+			color: $orange
+			text-transform: uppercase 
+	&__content
+		padding: 25px 35px 45px
+	&__item
+		margin-bottom: 30px
+		&:last-child
+			margin-top: 45px
+			margin-bottom: 0
+	&__input
+		border:
+			left: 1px solid #fbfbfb
+			right: 1px solid #fbfbfb 
+	&__btn
+		display: block
+		width: 100% 
+		height: 55px
+		font-size: 15px
+		font-weight: 600
+		color: #FFF
+		background-color: $orange
+		border: none
+		cursor: pointer
+		transition: .2s
+		&:hover
+			background-color: $orange / .85 
+			
+
+// ====================
+// Social-Block styles
+// ====================
+
+.social
+	&__row
+		@extend %for-row
+		align-items: center
+	&__col
+		@extend %for-col
+		&:nth-child(1)
+			flex-grow: 1
+		&:nth-child(2)
+			flex-grow: 9
+
+.social 
+	@include flex($jc: space-between, $ai: center)
+	width: 100% 
+	&-block
+		padding-top: 20px
+		padding-bottom: 20px
+		box-shadow: 0 1px 3px 0 rgba(#000, .38)
+		position: relative
+		z-index: 1
+	&__title
+		font-size: 20px
+	&__text
+		font-size: 14px
+		opacity: 0.6
+	&__link
+		font-size: 48px
+		color: #CCC 
+		transition: 0.2s
+		&:hover
+			color: $orange
+			
+// ====================
+// Advantages-Block styles
+// ==================== 
+
+.advantages
+	&-block
+	&__tabs
+		@include flex($ai: center)
+	&-tabs
+		&__toggle
+			width: 110px
+			margin-right: 90px
+			flex-shrink: 0
+			border: 1px solid #e9e9e9
+			border-radius: 4px
+			overflow: hidden
+			&r
+				display: block
+				width: 100% 
+				height: 110px
+				border: none
+				cursor: pointer
+				background-color: $dark
+				font-size: 16px
+				font-weight: bold
+				color: #FFF
+				text-transform: uppercase
+				&:hover, &_active
+					background-color: $orange 
+				& + &
+					border-top: 1px solid #E9E9E9 
+		&__container
+			flex-grow: 1
+		&__title
+			margin-bottom: 50px
+			font-size: 20px
+			color: #000
+		&__text
+			font-size: 14px
+			line-height: 1.45
+			opacity: 0.6
+			> *
+				margin-bottom: 20px
+				&:last-child
+					margin-bottom: 0
+		&__img
+			display: block
+			max-width: 100% 
+			margin-left: 90px
+		&__btn
+			margin-top: 45px
+			
+// ====================
+// Gallery-Block styles
+// ====================
+
+.gallery
+	&-block
+	&-grid
+		&__row
+			@extend %for-row
+			justify-content: space-between
+			&_reverse
+				@media (min-width: nth($mediaBp, 3) + 1)
+					flex-direction: row-reverse
+		&__col
+			@extend %for-col
+			width: 50%
+			max-width: 450px
+		&__img
+			display: block
+			max-width: 100% 
+			box-shadow: 0 20px 50px 0 rgba(#000, .25)
+	&-info
+		&__title
+			font-size: 20px
+			padding: 20px 0 25px
+			margin-bottom: 25px
+			position: relative
+			&:after
+				content: ""
+				width: 65px
+				border-bottom: 2px solid $orange
+				position: absolute
+				left: 0
+				bottom: 0
+		&__text
+			font-size: 14px
+			opacity: 0.6
+			> * + *
+				margin-top: 20px
+	&-list
+		margin-top: 30px
+		&__item
+			@include flex
+			font-size: 14px
+			& + &
+				margin-top: 30px
+		&__icon
+			@include flex($jc: center, $ai: center)
+			width: 40px
+			height: 40px
+			margin-right: 25px
+			border-radius: 50%
+			color: $orange 
+			border: 2px solid
+			font-size: 16px
+			flex-shrink: 0
+		&__descr
+			&-title
+				margin-bottom: 5px
+			&-text
+				opacity: 0.6
+				
+// ====================
+// Chart-Block styles
+// ====================
+
+.chart-grid
+	&__row
+		@extend %for-row
+		margin-top: 75px
+	&__col
+		@extend %for-col
+		@include flex($ai: center, $fd: column)
+		width: calc(100% / 3) 
+
+	&__col:hover &__icon
+		color: $orange * 1.2
+	&__icon
+		@include flex($jc: center, $ai: center) 
+		width: 75px
+		height: 75px
+		border-radius: 50%
+		border: 2px solid
+		color: $orange
+		font-size: 32px
+		flex-shrink: 0 
+		margin-bottom: 20px
+	&__title
+		font-size: 20px
+		color: $dark
+		margin-bottom: 25px 	
+	&__text
+		text-align: center
+		font-size: 14px
+		opacity: 0.6 
+	
+// ====================
+// Pricing-Block styles
+// ====================	
+
+.pricing
+	&-grid
+		&__row
+			@extend %for-row
+			justify-content: space-between
+			align-items: flex-end
+			margin-top: 75px 
+		&__col
+			@extend %for-col
+			width: calc(100% / 3)
+			text-align: center
+		&__title
+			padding: 20px 0
+			background-color: $dark
+			color: #FFF   
+			margin-bottom: 1px
+			font-size: 20px
+			font-family: "OpenSans"
+			font-weight: bold
+		&__content
+			background-color: $dark
+			color: #FFF
+			padding: 25px 0 20px   
+		&__price
+			font-size: 70px
+			font-weight: bold
+			span
+				font-size: 30px
+		&__info
+			font-size: 14px  
+			font-weight: 600
+			color: #999
+		&__popular
+			border-bottom: 5px solid $orange
+			&_most
+				padding: 15px 0
+				background-color: $orange
+				color: #FFF
+				text-transform: uppercase
+				border-bottom: none
+				font-size: 14px
+				font-weight: bold
+		&__list
+			li
+				background-color: #fff
+				margin-bottom: 1px
+				padding: 15px 0
+				text-transform: uppercase
+				color: #86878B
+				font-size: 14px
+				
+// ====================
+// Customer-Block styles
+// ====================
+				
+.customer-grid
+	padding:
+		left: 30px 
+		right: 30px
+	margin-top: 55px 
+	&__row
+		@extend %for-row
+		justify-content: space-between
+	&__col
+		@extend %for-col
+		width: cacl(100% / 3)
+		max-width: 305px
+	&__item
+		max-width: 275px
+	&__comment 
+		background-color: $silver
+		padding: 25px 10px
+		border-radius: 3px
+		font-size: 14px
+		color: #86878B
+		font-style: italic
+		margin-bottom: 20px
+		position: relative
+		&:after
+			content: ""
+			position: absolute
+			width: 0
+			height: 0
+			left: 25px
+			top: calc(100% - 1px)
+			border-top: 15px solid $silver
+			border-left: 10px solid transparent
+			border-right: 10px solid transparent
+	&__card
+		@include flex
+	&__photo
+		width: 70px
+		height: 70px
+		margin-right: 20px
+		border-radius: 50%
+	&__info
+		@include flex ($fd: column, $jc: center)
+	&__name
+		font-size: 20px
+		font-weight: bold
+		color: $dark
+	&__job
+		font-size: 14px
+		color: #86878b
+		
+// ====================
+// Stylish-Block styles
+// ====================
+
+.stylish
+	&-block
+		background: url(img/stylish.jpg) no-repeat center /cover
+
+.title
+	&_white
+		color: #fff
+		&:after
+			border-bottom-color: #FFF 
+	&-sub
+		&_white
+			color: #FFF 
+			font-size: 16px
+			margin-bottom: 30px
+.button
+	&_center
+		margin: auto
+// ====================
+// Contact-Block styles
+// ====================
+
+.contact
+	&-block
+		&__data
+			margin-top: 80px
+			@include flex ($jc: space-between)
+		&-btn
+			margin-top: 40px 
+			cursor: pointer 
+		&__info
+			width: 47%
+		&__item 
+			margin-bottom: 30px  
+			&:last-child
+				margin-bottom: 0
+.input
+	&_small
+		height: 30px
+	&_text
+		height: 150px
+		resize: none
+		
+// ====================
+// Footer styles
+// ====================
+
+.footer
+	background-color: #000
+	text-align: center
+	&__social
+		padding: 20px 0 10px 
+	&__networks  
+		@include flex ($jc: center)
+		> *
+			padding-right: 25px
+			&:last-child
+				padding-right: 0  
+	&__links
+		margin-bottom: 10px
+	&__rights
+		font-size: 12px
+		color: #ccc
+		
+.social
+	&_small
+		@include flex($jc: center)
+	&__link
+		&_small
+			font-size: 24px
+	li
+		margin-right: 25px
+		&:last-child
+			margin-right: 0
+
+			
+// ====================
+// MEDIA
+// ====================
+@import "_media"
+
+
+

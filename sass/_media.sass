@@ -1,0 +1,256 @@
+@media (max-width: nth($mediaBp, 1))
+	.container
+		max-width: nth($mediaBp, 2)
+
+
+@media (max-width: nth($mediaBp, 2))
+	.container
+		max-width: nth($mediaBp, 3) 
+	main
+		> * 
+			padding-top: 50px
+			padding-bottom: 50px
+
+	
+	.gallery
+		&-grid
+			&__row
+				@include flex ($fd: column, $ai: center)
+			&__col			
+				@include flex ($fd: column)
+				width: 100%
+				~ *
+					width: 100%
+					max-width: 100%
+			&__img
+				max-width: 100%
+		&-info
+			&__title
+				padding-top: 0
+		
+		
+	.preview
+		&-block
+			padding:
+				top: 50px
+				bottom: 70px
+			&__button
+				&_center
+					margin: 0 auto 
+		&__row
+			text-align: center
+			justify-content: center
+		&__title
+			&:after
+				left: calc(50% - calc(65px / 2))
+	
+	.social
+		&__link
+			font-size: 28px
+	.advantages
+		&-tabs
+			&__img
+				display: none
+	.gallery
+		&-info
+			text-align: center
+			&__title
+				&:after
+					left: calc(50% - calc(65px / 2)) 
+		&-list
+			text-align: justify
+			
+	.pricing
+		&-grid
+			&__col
+				padding: 10px
+			&__content
+				padding-top: 10px
+	.customer
+		&-grid
+			&__row
+				justify-content: space-around
+					
+		
+
+@media (max-width: nth($mediaBp, 3))
+	.container
+		max-width: nth($mediaBp, 4)
+	.social 
+		&__row
+			text-align: center
+			justify-content: center
+		&__col
+			&:nth-child(2)
+				flex-grow: 0
+	.customer
+		&-grid
+			padding: 0
+			margin-top: 30px
+			&__row
+				margin: 0 
+			&__item
+				@include flex ($fd: column)
+				width: 600px
+			&__name
+				font-size: 14px
+			&__photo
+				margin-right: 10px
+	.pricing
+		&-grid
+			&__list
+				li
+					font-size: 12px 
+	.social
+		&__link
+			&_small
+				font-size: 20px
+				
+		
+@media (max-width: nth($mediaBp, 4))
+	.container
+		max-width: nth($mediaBp, 5)
+	.logo
+		&_big
+			font-size: 56px 
+	.nav
+		display: none
+	.logo
+		margin: 0 auto
+	.preview
+		&__title
+			font-size: 18px
+			padding-bottom: 25px 
+			margin-bottom: 25px 
+		&__text
+			font-size: 14px
+			max-width: 390px
+		&__col
+			width: 85% 
+	.custom
+		&-form
+			width: 98%
+			&__content
+				padding: 15px 25px 25px
+			&__title
+				font-size: 16px
+			&__item
+				margin-bottom: 15px
+				&:last-child
+					margin-top: 25px 
+	.input
+		&:focus
+			font-size: 15px    
+	.advantages
+		&-tabs
+			&__toggle
+				@include flex
+				margin:
+					right: 0
+					bottom: 20px
+				width: 98%
+			&__toggler
+				height: 50px
+				margin-right: 1px
+				font-size: 14px
+				&:last-child
+					margin-right: 0
+			&__tab
+				text-align: center
+			&__title
+				font-size: 18px
+				margin-bottom: 15px
+			&__text
+				margin-bottom: 15px
+				max-width: 400px
+				font-size: 13px
+			&__btn
+				margin: 0 auto	
+		&__tabs
+			flex-direction:  column
+	.gallery
+		&-list
+			padding:
+				right: 10px
+			&__icon
+				margin-right: 10px
+		&-info
+			&__title
+				font-size: 18px
+				padding:
+					top: 0
+					bottom: 20px
+				margin-bottom: 20px
+
+
+	.chart
+		&-grid
+			&__row
+				@include flex ($fd: column, $ai:center)
+				margin-top: 30px 
+			&__col
+				width: 100%
+			&__title
+				font-size: 18px
+				margin-bottom: 15px 
+			&__icon
+				height: 60px
+				width: 60px
+				font-size: 30px
+			&__text
+				max-width: 400px
+	.title
+		font-size: 26px 
+		padding-bottom: 20px
+		margin-bottom: 20px
+		
+	.pricing
+		&-grid
+			&__row
+				flex-direction: column
+				align-items: center
+				margin-top: 40px
+			&__col
+				width: calc(100% / 1.5) 
+			&__content
+				padding:
+					bottom: 10px
+			&__title 
+				font-size: 16px
+				padding:
+					top: 10px
+					bottom: 10px
+			&__price
+				font-size: 32px 
+				line-height: 1
+			&__list
+				li
+					padding: 5px 0 
+			&__popular
+				&_most
+					font-size: 12px
+					padding:
+						top: 10px
+						bottom: 10px
+	.title
+		&-sub
+			&_white
+				max-width: 380px
+				margin: 0 auto
+	.stylish
+		&-block
+			&-btn
+				margin-top: 20px
+	.contact
+		&-block
+			&__data
+				@include flex ($fd: column, $ai: center)
+			&__info 
+				width: 98%
+				&:first-child 
+					margin-bottom: 30px
+	.social
+		li
+			margin-right: 15px
+			&:last-child
+				margin-right: 0

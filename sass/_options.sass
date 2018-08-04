@@ -1,0 +1,109 @@
+// ============================
+// RESETS
+// ============================
+table, thead, tbody, tfoot, tr, th, td 
+	margin: 0
+	padding: 0
+	border: none
+	border-collapse: inherit
+	border-spacing: 0
+	border-color: inherit
+	vertical-align: inherit
+	font-weight: inherit
+	-webkit-border-horizontal-spacing: 0
+	-webkit-border-vertical-spacing: 0 
+
+* 
+	margin: 0
+	padding: 0 
+
+ul, ol 
+	list-style-type: none 
+
+a 
+	text-decoration: none
+	cursor: pointer 
+
+input:focus,
+label:focus,
+textarea:focus,
+select:focus,
+option:focus,
+button:focus,
+a:focus 
+	outline: none 
+
+*, *:before, *:after, input, textarea, button, select 
+	box-sizing: border-box 
+
+// ============================
+// MAIN COLORS
+// ============================
+ 
+$orange: #ff9b51
+$text: #212121
+$dark: #333
+$silver: #f5f5f5
+
+// ============================
+// FONTS
+// ============================
+
+@font-face
+	font-family: "Raleway"
+	font-weight: normal
+	font-style: normal
+	src: url(fonts/raleway/Raleway-Regular.ttf) format("truetype")
+	
+@font-face
+	font-family: "Raleway"
+	font-weight: bold
+	font-style: normal
+	src: url(fonts/raleway/Raleway-Bold.ttf) format("truetype")
+	
+@font-face
+	font-family: "Raleway"
+	font-weight: lighter
+	font-style: normal
+	src: url(fonts/raleway/Raleway-Light.ttf) format("truetype")
+	
+
+@font-face
+	font-family: "OpenSans"
+	font-weight: normal
+	font-style: normal
+	src: url(fonts/opensans/OpenSans-Regular.ttf) format("truetype")
+	
+@font-face
+	font-family: "OpenSans"
+	font-weight: bold
+	font-style: normal
+	src: url(fonts/opensans/OpenSans-Bold.ttf) format("truetype")
+	
+@font-face
+	font-family: "OpenSans"
+	font-weight: 600
+	font-style: normal
+	src: url(fonts/opensans/OpenSans-SemiBold.ttf) format("truetype")
+	
+@font-face
+	font-family: "OpenSans"
+	font-weight: lighter
+	font-style: normal
+	src: url(fonts/opensans/OpenSans-Light.ttf) format("truetype")
+
+// ============================
+// MEDIA
+// ============================
+
+$mediaBp: (1130px, 980px, 767px, 640px, 480px)
+
+// ============================
+// MIXINS
+// ============================
+
+@mixin flex ($d: flex, $jc: flex-start, $w: nowrap, $ai: stretch, $fd: row) 
+	display: $d
+	flex-flow: $fd $w
+	justify-content: $jc
+	align-items: $ai 
